@@ -1,0 +1,11 @@
+export enum Colors {
+  MAIN_LIGHT = "#dcf1e4",
+  MAIN = "#67405f",
+  SECONDARY = "#75ACCC",
+  ACCENT_MAIN = "#584123",
+  ACCENT_SECONDARY = "#9C9D92",
+  BACKGROUND_LIGHT = "#FCF9ED",
+  BACKGROUND_DARK = "#100700",
+  BLACK = "#22264A",
+  WHITE = "#EEE"
+}

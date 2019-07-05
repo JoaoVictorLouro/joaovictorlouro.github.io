@@ -1,12 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./app";
+import "aos/dist/aos.css";
+import * as serviceWorker from "./serviceWorker"; // You can also use <link> for styles
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const AOS = require("aos");
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+AOS.init();
+ReactDOM.render(<App />, document.getElementById("root"));
+
 serviceWorker.unregister();
