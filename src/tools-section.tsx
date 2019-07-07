@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ReactSVG from "react-svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faAngleRight, faTools } from "@fortawesome/free-solid-svg-icons";
 import { FormattedMessage } from "react-intl";
 
 import HeroGifUri from "./assets/hero3.gif";
@@ -72,8 +72,17 @@ const tools: Tool[] = [
 ];
 
 const StyledSection = styled.section`
-  .tools-container {
+  .gradient-container {
     background-image: linear-gradient(to right, #47a4f5 0%, #3375ec 100%);
+  }
+
+  .data-container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+  }
+
+  .tools-container {
     user-select: none;
 
     .arrow-container {
@@ -116,6 +125,7 @@ const StyledSection = styled.section`
       }
 
       p {
+        margin-bottom: 0.5rem;
         color: white;
         font-weight: bold;
         font-size: 2rem;
@@ -160,6 +170,24 @@ const StyledSection = styled.section`
       margin: auto;
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    .tools-hero-container {
+      height: 45vmin;
+
+      h2 {
+        font-size: 5vmin;
+      }
+
+      h4 {
+        font-size: 3vmin;
+      }
+    }
+
+    .section-large-icon {
+      color: rgba(0, 0, 0, 0.1);
+    }
+  }
 `;
 
 export function ToolsSection() {
@@ -183,17 +211,22 @@ export function ToolsSection() {
           </h4>
         </div>
       </div>
-      <div className="tools-container flex">
-        <div className="arrow-container" onClick={previousIcon}>
-          <FontAwesomeIcon icon={faAngleLeft} />
-        </div>
-        <div className="flex-grow icon-container" data-aos="flip-right" data-aos-delay="150" key={icon.name}>
-          {icon.iconUrl && <ReactSVG src={icon.iconUrl} />}
-          {icon.icon && <FontAwesomeIcon icon={icon.icon} />}
-          <p>{icon.name}</p>
-        </div>
-        <div className="arrow-container" onClick={nextIcon}>
-          <FontAwesomeIcon icon={faAngleRight} />
+      <div className="gradient-container">
+        <div className="flex data-container">
+          <FontAwesomeIcon icon={faTools} className="section-large-icon" />
+          <div className="tools-container flex flex-grow">
+            <div className="arrow-container" onClick={previousIcon}>
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </div>
+            <div className="flex-grow icon-container" data-aos="flip-right" data-aos-delay="150" key={icon.name}>
+              {icon.iconUrl && <ReactSVG src={icon.iconUrl} />}
+              {icon.icon && <FontAwesomeIcon icon={icon.icon} />}
+              <p>{icon.name}</p>
+            </div>
+            <div className="arrow-container" onClick={nextIcon}>
+              <FontAwesomeIcon icon={faAngleRight} />
+            </div>
+          </div>
         </div>
       </div>
     </StyledSection>

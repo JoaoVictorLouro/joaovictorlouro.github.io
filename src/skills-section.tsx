@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChartLine } from "@fortawesome/free-solid-svg-icons";
 import { Colors } from "./theme/colors";
 
 import HeroGifUri from "./assets/hero2.gif";
@@ -12,6 +14,10 @@ import JapanIcon from "./assets/icons/japan.png";
 import { SectionDivider } from "./section-divider";
 
 const StyledSection = styled.section`
+  .gradient-container {
+    background-image: linear-gradient(to right, ${Colors.MAIN} 0%, #4c4067 100%);
+  }
+
   .language-container {
     padding: 1rem;
 
@@ -35,11 +41,6 @@ const StyledSection = styled.section`
         height: 0.5rem;
       }
     }
-  }
-
-  .skills-container,
-  .language-container {
-    background-image: linear-gradient(to right, ${Colors.MAIN} 0%, #4c4067 100%);
   }
 
   .skills-container {
@@ -143,6 +144,24 @@ const StyledSection = styled.section`
       margin: auto;
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    .data-container {
+      max-width: 768px;
+    }
+
+    .skills-hero-container {
+      height: 45vmin;
+
+      h2 {
+        font-size: 5vmin;
+      }
+
+      h4 {
+        font-size: 3vmin;
+      }
+    }
+  }
 `;
 
 function SkillBar({
@@ -171,43 +190,50 @@ export function SkillsSection() {
   return (
     <StyledSection id="skills">
       <SectionDivider />
-      <div className="skills-hero-container">
-        <div className="text-wrapper">
-          <h2>
-            <FormattedMessage id="skills-hero-text" />
-          </h2>
-          <h4>
-            <FormattedMessage id="skills-hero-description" />
-          </h4>
+      <div className="gradient-container">
+        <div className="skills-hero-container">
+          <div className="text-wrapper">
+            <h2>
+              <FormattedMessage id="skills-hero-text" />
+            </h2>
+            <h4>
+              <FormattedMessage id="skills-hero-description" />
+            </h4>
+          </div>
         </div>
-      </div>
-      <div className="skills-container">
-        <div className="flex">
-          <SkillBar label="JS" amount={90} aos="fade-left" size={60} />
-          <SkillBar label="CSS" amount={65} aos="fade-right" size={40} />
-        </div>
-        <div className="flex">
-          <SkillBar label="HTML" amount={70} aos="fade-left" size={40} />
-          <SkillBar label="Node" amount={80} aos="fade-right" size={60} />
-        </div>
-        <div className="flex">
-          <SkillBar translateLabel="skills-tests" amount={70} aos="fade-left" size={60} />
-          <SkillBar label="Design" amount={80} aos="fade-right" size={40} />
-        </div>
-        <div className="flex">
-          <SkillBar label="DevOps" amount={40} aos="fade-left" size={40} />
-          <SkillBar translateLabel="skills-software-engineering" amount={70} aos="fade-right" size={60} />
-        </div>
-      </div>
-      <div className="language-container">
-        <h4 data-aos="fade-in" data-aos-delay="150">
-          <FormattedMessage id="skills-language-label" />
-        </h4>
-        <div className="flex flex-wrap justify-between" data-aos="fade-in" data-aos-delay="150">
-          <img src={BrazilIcon} alt="portuguese (brazillian)" className="flag" />
-          <img src={UnitedStatesIcon} alt="english" className="flag" />
-          <img src={FranceIcon} alt="french" className="flag" />
-          <img src={JapanIcon} alt="japanese" className="flag" />
+        <div className="flex m-auto data-container">
+          <div className="flex-grow">
+            <div className="skills-container">
+              <div className="flex">
+                <SkillBar label="JS" amount={90} aos="fade-left" size={60} />
+                <SkillBar label="CSS" amount={65} aos="fade-right" size={40} />
+              </div>
+              <div className="flex">
+                <SkillBar label="HTML" amount={70} aos="fade-left" size={40} />
+                <SkillBar label="Node" amount={80} aos="fade-right" size={60} />
+              </div>
+              <div className="flex">
+                <SkillBar translateLabel="skills-tests" amount={70} aos="fade-left" size={60} />
+                <SkillBar label="Design" amount={80} aos="fade-right" size={40} />
+              </div>
+              <div className="flex">
+                <SkillBar label="DevOps" amount={40} aos="fade-left" size={40} />
+                <SkillBar translateLabel="skills-software-engineering" amount={70} aos="fade-right" size={60} />
+              </div>
+            </div>
+            <div className="language-container">
+              <h4 data-aos="fade-in" data-aos-delay="150">
+                <FormattedMessage id="skills-language-label" />
+              </h4>
+              <div className="flex flex-wrap justify-between" data-aos="fade-in" data-aos-delay="150">
+                <img src={BrazilIcon} alt="portuguese (brazillian)" className="flag" />
+                <img src={UnitedStatesIcon} alt="english" className="flag" />
+                <img src={FranceIcon} alt="french" className="flag" />
+                <img src={JapanIcon} alt="japanese" className="flag" />
+              </div>
+            </div>
+          </div>
+          <FontAwesomeIcon icon={faChartLine} className="section-large-icon" />
         </div>
       </div>
     </StyledSection>

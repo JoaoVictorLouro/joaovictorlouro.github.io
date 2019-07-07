@@ -13,6 +13,14 @@ import { IntlProvider, addLocaleData } from "react-intl";
 const StyledMain = styled.main`
   padding-top: 3.7rem;
   overflow-x: hidden;
+
+  @media only screen and (min-width: 768px) {
+    .profile-media-container,
+    .stats-media-container {
+      width: 100%;
+      display: flex;
+    }
+  }
 `;
 
 function App({ setLanguage }: { setLanguage: (locale: string) => void }) {
@@ -21,8 +29,12 @@ function App({ setLanguage }: { setLanguage: (locale: string) => void }) {
       <Header setLanguage={setLanguage} />
       <StyledMain>
         <HeroSection />
-        <ProfileSection />
-        <StatsSection />
+        <div className="profile-media-container">
+          <ProfileSection />
+        </div>
+        <div className="stats-media-container">
+          <StatsSection />
+        </div>
         <SkillsSection />
         <ToolsSection />
         <ExperienceSection />
@@ -60,7 +72,7 @@ const InternationalizedApp = function() {
   };
 
   if (!messages) {
-      return null;
+    return null;
   }
 
   return (

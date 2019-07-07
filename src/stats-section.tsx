@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import { faProjectDiagram } from "@fortawesome/free-solid-svg-icons";
+import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FormattedMessage } from "react-intl";
 
@@ -41,6 +42,11 @@ const StyledSection = styled.section`
       opacity: 0.3;
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    max-width: 768px;
+    margin: auto;
+  }
 `;
 
 function Stat({ stat, description, icon, aos }: { stat: number; description: string; icon: IconProp; aos: string }) {
@@ -66,9 +72,14 @@ export function StatsSection() {
   return (
     <StyledSection id="stats">
       <SectionDivider />
-      <Stat icon={faCode} stat={10} description="coding-time-description" aos="fade-left" />
-      <Stat icon={faBriefcase} stat={4} description="experience-time-description" aos="fade-right" />
-      <Stat icon={faProjectDiagram} stat={20} description="projects-worked-on" aos="fade-left" />
+      <div className="flex">
+        <FontAwesomeIcon icon={faLaptopCode} className="section-large-icon" />
+        <div className="flex-grow">
+          <Stat icon={faCode} stat={10} description="coding-time-description" aos="fade-left" />
+          <Stat icon={faBriefcase} stat={4} description="experience-time-description" aos="fade-right" />
+          <Stat icon={faProjectDiagram} stat={20} description="projects-worked-on" aos="fade-left" />
+        </div>
+      </div>
     </StyledSection>
   );
 }

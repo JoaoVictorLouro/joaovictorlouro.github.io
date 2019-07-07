@@ -8,6 +8,7 @@ const StyledDiv = styled.div`
   box-shadow: 0 0.5rem rgba(0, 0, 0, 0.2);
   background-color: #679dff;
   color: rgba(0, 0, 0, 0.7);
+  flex-grow: 1;
 `;
 
 export function Card({

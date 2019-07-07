@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Colors } from "./theme/colors";
 import { SectionDivider } from "./section-divider";
-import { Card } from "./card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBusinessTime } from "@fortawesome/free-solid-svg-icons";
 import { FormattedMessage } from "react-intl";
+import { Card } from "./card";
 
 const StyledSection = styled.section`
   .listing {
@@ -40,6 +42,20 @@ const StyledSection = styled.section`
     color: white;
     border-radius: 8px;
   }
+
+  @media only screen and (min-width: 768px) {
+      .data-container {
+          max-width: 768px;
+      }
+
+      .section-large-icon {
+          font-size: 15rem;
+      }
+
+      .card {
+          margin-top: 0;
+      }
+  }
 `;
 export function ExperienceSection() {
   return (
@@ -48,37 +64,40 @@ export function ExperienceSection() {
       <h2>
         <FormattedMessage id="experience" />:
       </h2>
-      <Card className="flex-col" data-aos="zoom-in-out" data-aos-delay="150">
-        <div className="listing">
-          <h3>
-            <FormattedMessage id="experience-period-now" />
-          </h3>
-          <div>
-            <h3>Objective Solutions</h3>
-            <h4 className="role">
-              <FormattedMessage id="experience-full-stack-developer" />
-            </h4>
+      <div className="flex mx-auto my-6 data-container">
+        <FontAwesomeIcon icon={faBusinessTime} className="section-large-icon" />
+        <Card className="flex-col" data-aos="zoom-in-out" data-aos-delay="150">
+          <div className="listing">
+            <h3>
+              <FormattedMessage id="experience-period-now" />
+            </h3>
+            <div>
+              <h3>Objective Solutions</h3>
+              <h4 className="role">
+                <FormattedMessage id="experience-full-stack-developer" />
+              </h4>
+            </div>
           </div>
-        </div>
-        <div className="listing">
-          <h3>2016</h3>
-          <div>
-            <h3>Benner</h3>
-            <h4 className="role">
-              <FormattedMessage id="experience-full-stack-developer" />
-            </h4>
+          <div className="listing">
+            <h3>2016</h3>
+            <div>
+              <h3>Benner</h3>
+              <h4 className="role">
+                <FormattedMessage id="experience-full-stack-developer" />
+              </h4>
+            </div>
           </div>
-        </div>
-        <div className="listing">
-          <h3>2014</h3>
-          <div>
-            <h3>DB1 Global Software</h3>
-            <h4 className="role">
-              <FormattedMessage id="experience-full-stack-developer" />
-            </h4>
+          <div className="listing">
+            <h3>2014</h3>
+            <div>
+              <h3>DB1 Global Software</h3>
+              <h4 className="role">
+                <FormattedMessage id="experience-full-stack-developer" />
+              </h4>
+            </div>
           </div>
-        </div>
-      </Card>
+        </Card>
+      </div>
       <SectionDivider />
     </StyledSection>
   );

@@ -49,6 +49,18 @@ const StyledSection = styled.section`
   svg {
     margin-right: 1em;
   }
+
+  @media only screen and (min-width: 768px) {
+    margin: -11rem auto 0 auto;
+
+    .profile-section {
+      max-width: 768px;
+    }
+
+    .profile-content {
+      box-shadow: 0 0.5rem rgba(0, 0, 0, 0.3);
+    }
+  }
 `;
 
 export function ProfileSection() {

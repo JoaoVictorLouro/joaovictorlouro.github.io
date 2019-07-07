@@ -149,6 +149,12 @@ const StyledHeader = styled.header`
       }
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    nav h1 {
+      text-align: left;
+    }
+  }
 `;
 
 const StyledIcon = styled(FontAwesomeIcon)`

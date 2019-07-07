@@ -44,6 +44,20 @@ const StyledSection = styled.section`
       margin: auto;
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    .hero-container {
+      height: 60vmin;
+
+      h2 {
+        font-size: 5.5vmin;
+      }
+
+      h4 {
+        font-size: 3.5vmin;
+      }
+    }
+  }
 `;
 
 export function HeroSection() {
