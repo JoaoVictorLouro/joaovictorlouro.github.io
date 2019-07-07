@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f553848867dd86c2d137bf590d73383d",
+    "revision": "45c9bdf347a95b40afaca8810b0ff704",
     "url": "/joaovictorlouro.github.io/index.html"
   },
   {
-    "revision": "d58956e0dfe42f9d044a",
+    "revision": "8758c4a4dad25e084a37",
     "url": "/joaovictorlouro.github.io/static/css/247.5bf44378.chunk.css"
   },
   {
-    "revision": "11061869758ee4b8bee7",
-    "url": "/joaovictorlouro.github.io/static/css/main.35dfb0c3.chunk.css"
+    "revision": "0750a4e947c4880000e3",
+    "url": "/joaovictorlouro.github.io/static/css/main.23fd8bc6.chunk.css"
   },
   {
     "revision": "f480e565b47728664fcd",
@@ -664,8 +664,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/joaovictorlouro.github.io/static/js/244.6553ed07.chunk.js"
   },
   {
-    "revision": "d58956e0dfe42f9d044a",
-    "url": "/joaovictorlouro.github.io/static/js/247.9a9bba18.chunk.js"
+    "revision": "8758c4a4dad25e084a37",
+    "url": "/joaovictorlouro.github.io/static/js/247.5fefed7a.chunk.js"
   },
   {
     "revision": "4b7e730329ff333a6efa",
@@ -1008,8 +1008,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/joaovictorlouro.github.io/static/js/99.73502ad0.chunk.js"
   },
   {
-    "revision": "11061869758ee4b8bee7",
-    "url": "/joaovictorlouro.github.io/static/js/main.efbb374d.chunk.js"
+    "revision": "0750a4e947c4880000e3",
+    "url": "/joaovictorlouro.github.io/static/js/main.bcc230df.chunk.js"
   },
   {
     "revision": "f2c6d170a26a9af1df57",
