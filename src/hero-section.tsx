@@ -48,6 +48,7 @@ const StyledSection = styled.section`
   @media only screen and (min-width: 768px) {
     .hero-container {
       height: 60vmin;
+      min-height: 450px;
 
       h2 {
         font-size: 5.5vmin;

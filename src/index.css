@@ -64,8 +64,8 @@ h4 {
 @media only screen and (min-width: 768px) {
   .section-large-icon {
     display: block;
-    font-size: 20rem;
-    color: rgba(0, 0, 0, 0.5);
-    margin: auto 1rem;
+    font-size: 15rem;
+    color: rgba(0, 0, 0, 0.2);
+    margin: auto 2rem;
   }
 }
